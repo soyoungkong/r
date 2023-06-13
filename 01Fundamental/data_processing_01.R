@@ -3,15 +3,18 @@ install.packages("dplyr")
 
 # 패키지 로딩
 library(dplyr)
+
 # 패키지 확인
 search()
 
 
 # 작업 디렉토리 설정
-setwd("C:/Rproject")
+setwd("C:/workspace/github/r/01Fundamental/data")
+
 # 데이터 불러오기
 iris_df <- read.csv(file = "DAT/iris_data.csv",
                     stringsAsFactors = TRUE)
+
 # dataframe 형식에서 tibble 형식으로 바꿔 저장
 iris_tbl_df <- as_tibble(iris_df)
 iris_tbl_df
@@ -47,11 +50,14 @@ iris_tbl_df %>%
 
 
 # mutate()
+# 새로운 컬럼 추가 
 iris_tbl_df %>%
   mutate(New_col = Sepal.Length * 2)
 
 
-# summarise()
+# summarise() : 데이터 요약 
+# dplyr 패키지에서 제공하는 데이터 요약을 위한 기능 
+# 새로운 값을 만듦 
 iris_tbl_df %>% 
   summarise(mean.SL = mean(Sepal.Length))
 

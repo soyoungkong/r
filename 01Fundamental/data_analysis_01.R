@@ -1,5 +1,5 @@
 # 패키지 설치 : 최초 1회만 수행
-install.packages("ggplot2")
+# install.packages("ggplot2")
 
 # 패키지 로딩
 library(ggplot2)
@@ -8,7 +8,7 @@ search()
 
 
 # 작업 디렉토리 설정
-setwd("C:/Rproject")
+setwd("C:/workspace/github/r/01Fundamental/data")
 # 데이터 불러오기
 iris_df <- read.csv(file = "DAT/iris_data.csv",
                     stringsAsFactors = TRUE)
@@ -41,7 +41,7 @@ ggplot(data = iris_df) +
 
 
 # 산점도(Scatter Plot) 그래프 파일 저장
-png(filename = "C:/Rproject/OUT/ggplot2.png", 
+png(filename = "C:/workspace/github/r/01Fundamental/data/OUT/ggplot2.png", 
     width = 1024, height = 768)
 ggplot(data = iris_df) +
   geom_point(mapping = aes(x = Petal.Length, 
@@ -51,7 +51,7 @@ dev.off()
 
 
 # 패키지 설치 : 최초 1회만 수행
-install.packages("plotly")
+#install.packages("plotly")
 
 # 패키지 로딩
 library(plotly)

@@ -3,9 +3,10 @@
 # 작성자 : 김준기
 # ------------------------------------------------------------
 
-# 1. 데이터 불러오기
+## 1. 데이터 불러오기
 # 작업 디렉토리 설정
-setwd("C:/Rproject")
+setwd("C:/workspace/github/r/01Fundamental/data")
+
 # 데이터 불러오기
 cancer_df <- read.csv(file = "DAT/cancer_data.csv",
                       header = TRUE,
@@ -63,6 +64,7 @@ summary(cancer_df)
 
 # 종속변수(Class) 빈도 계산
 table(cancer_df$Class)
+
 # 종속변수(Class) 비율 계산
 prop.table(table(cancer_df$Class))
 
@@ -102,6 +104,7 @@ ggplot(data = data_df) +
   geom_boxplot(mapping = aes(x = Cl.thickness,
                              y = Class,
                              fill = Class))
+
 
 # 3. 데이터 모델링 - 모형학습(로지스틱회귀분석)
 # 로지스틱회귀모형 생성
@@ -152,9 +155,12 @@ table(real = data_df$Class, predict = predict.y)
 # 평가 지표 계산하기 - 정분류율, 민감도, 특이도
 # 실제값과예측값 비교
 table(real = data_df$Class, predict = predict.bwd.y)
+
 # 정분류율(Accuracy)
 (353 + 212) / 584
+
 # 민감도(Sensitivity)
 212 / (11 + 212)
+
 # 특이도(Specificity)
 353 / (353 + 8)

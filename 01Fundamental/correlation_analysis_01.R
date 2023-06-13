@@ -1,5 +1,5 @@
 # 작업 디렉토리 설정
-setwd("C:/Rproject")
+setwd("C:/workspace/github/r/01Fundamental/data")
 # 데이터 불러오기
 iris_df <- read.csv(file = "DAT/iris_data.csv",
                     stringsAsFactors = TRUE)
@@ -37,6 +37,7 @@ install.packages("corrplot")
 
 # 패키지 로딩
 library(corrplot)
+
 # 패키지 확인
 search()
 
@@ -64,4 +65,3 @@ corrplot(corr = iris_cor_result,
 corrplot(corr = iris_cor_result, 
          order = "hclust", 
          addrect = 2)
-
